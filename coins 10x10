@@ -1,0 +1,43 @@
+
+#include <iostream>
+
+using namespace std;
+
+int main() 
+{
+int c=100; int a1=1; int a2=0; int a3; int i;
+
+for(i=1;i<=10&&a1!=0; i++){
+    
+       cout<< "\nWould you like to open envelope number "; cout <<i; cout <<"?\n";
+  
+
+ cout<< "If yes, please type how many coins (out of 10) you would use, if no type 0 \n";  
+   if(i>1){ 
+
+cout<< "Oh, by the way, you still have "; cout<<a2; cout<<" coins left from the previous envelope which will automatically be gambled this time.\n";}
+
+ cout<<" Enter number of coins to gamble: ";
+   cin>> a1;
+ if(a1>10) { cout<< " Haww! Cheating! Caught you redhanded!!\n";  goto cheating;}
+
+   
+else {
+cout<<"\n\n";
+
+   int c1= rand()%2;
+   int c2=a1+a2;
+   int b1=c2*c1*2;
+   if(b1==0){ cout << "Ooops! You've lost all the money you gambled this time, i.e."; cout<< c2; cout<<" coins!!\n";}
+   else { cout<< " Congratulations! You just doubled up to "; cout<<b1; cout<<" coins!\n";}
+   c=c+b1-a1-a2;
+      a2=10-a1;
+   
+} 
+
+ }
+cout<<" Thank you for participating! You are taking away with you "; cout<<c; cout<<" coins!";
+return 0;
+cheating: cout<<"You have lost all your money (including earnings from previous trials)\n -------GAME TERMINATED-------";
+
+}
