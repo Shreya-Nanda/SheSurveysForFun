@@ -1,0 +1,34 @@
+#include <iostream>
+
+using namespace std;
+
+int main() 
+{
+ int c=100; int g=0; int total=0; // c for coins, g for gamble
+
+while(c>0){
+  cout<< "You have "; cout<<c; cout<< " coins.\n";
+
+ cout<<"Enter number of coins to gamble: ";
+   cin>> g ; cout<<" \nPlease wait... \n\n ";
+   if(g>c) { cout<< " Haww! Cheating! Caught you redhanded!!\n";  goto cheating;}
+ 
+   else{cout<<"\n\n";
+
+   int c1= rand()%2;
+   int b1=g*c1*2;
+     int coins=c-g;
+   c=coins;
+   total= total+b1+c-g;
+   if(b1!=0)  { cout<< " Congratulations! You just doubled up to "; cout<<b1; cout<<" coins!\n";
+ 
+   }
+   else { cout << "Ooops! You've lost all the money you gambled this time, i.e."; cout<< g; cout<<" coins!!\n";}
+  
+   }
+}
+cout<<" Thank you for participating! You are taking away with you "; cout<<total; cout<<" coins!"; 
+
+return 0;
+cheating: cout<<"You have lost all your money (including earnings from previous trials)\n -------GAME TERMINATED-------";
+}
